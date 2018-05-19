@@ -14,7 +14,7 @@ Build docker image as follows. Don't forget the last `.` (dot). This is required
 
 Then run jupyter notebook like this
 
-    docker run --rm -p 8888:8888 -v $(pwd):/opt/local/work pyconmini-osaka-2018 
+    docker run --rm --user root -e NB_UID=$(id -u) -p 8888:8888 -v $(pwd):/opt/local/work pyconmini-osaka-2018 
 
 To debug docker environment, run bash as follows.
 
